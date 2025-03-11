@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import requests
-import os
 
 NEWS_API_URL = "https://newsapi.org/v2/top-headlines"
 API_KEY = "e415d475d8d94457b73fd8df5872f33c"
@@ -22,7 +21,7 @@ def fetch_top_news():
 
         if news_data["status"] == "ok":
             articles = news_data["articles"][:3]
-            print("\nTop 3 News Articles:\n")
+            print("\n\033[1mTop 3 News Articles:\033[0m\n")
             for i, article in enumerate(articles, 1):
                 print(f"{i}. {article['title']}")
                 print(f"   {article['description']}")
